@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tugas/Setting.dart';
 
 
 class Zodiac extends StatefulWidget {
