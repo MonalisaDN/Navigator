@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
 
-
-class Zodiac extends StatefulWidget {
-  const Zodiac({Key? key}) : super(key: key);
-
+class Zodiac extends StatelessWidget {
   @override
-  State<Zodiac> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<Zodiac> {
-  int selectedIndex = 0;
-  String title = "Zodiac";
-  List<Widget> itemPages = <Widget>[
-    Text('Bagian Home'),
-    SettingsPage(),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext build) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          child: const Icon(Icons.arrow_back),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),));}
-  }
+        title: Text("Zodiac"),
+      ),
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              Card(
+                child: ListTile(
+                  title: Text('Capricorn' + '\n 21 Desember - 19 Januari',
+                      style: TextStyle(fontSize: 16)),
+                  subtitle: Text(
+                    'Zodiak Capricorn adalah zodiak yang memiliki lambang kambing laut.',
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                  leading: CircleAvatar(
+                    backgroundImage: AssetImage('assets/capricorn.png'),
+                  ),
+                  trailing: Icon(
+                    Icons.arrow_circle_right_outlined,
+                    color: Colors.blue,
+                  ),
+                ),
+              )
+            ],
+          )],));}}
